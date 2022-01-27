@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    
+    <script>
+
+    var compteur;
+
+    function init() {
+        compteur = 10;
+        laDiv1=document.createElement('div');
+        laDiv1.setAttribute('id','div1');
+        laDiv2=document.getElementById('div2');
+        laDiv2.appendChild(laDiv1);
+        const myVar = setInterval(compt,1000);
+        
+
+    }
+
+    function compt(){
+        laDiv1.textContent=""+compteur+" secondes restantes";
+        if (compteur > 0) {
+            compteur-=1;
+        }
+        else{
+            clearInterval(myVar);
+        }        
+    }
+    </script>
+    
+    <head>
+        <meta charset="utf-8">
+        <title>Compteur</title>
+    </head>
+    <body onload='init()'>
+        <div id="div2" style="border-color:black; border-style:solid; height:120px; width:120px">
+        </div>
+    </body>
+</html>

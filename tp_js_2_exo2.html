@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        
+        var c;
+        var ctx;        
+        var x1;
+        var x2;
+
+        function init() {       
+            c = document.getElementById("myCanvas");
+            ctx = c.getContext('2d');  
+            x1 = 0;  
+            x2 = 50;    
+            ctx.strokeRect(x1,10,50,50);
+            const myVar = setInterval(deplace,100);                      
+        }
+        
+        function deplace() {
+            if (x2+10<=c.width) {
+                ctx.clearRect(0,0,c.width,c.height);
+                x1 = x1 + 10;
+                x2 = x2 + 10;
+                ctx.strokeRect(x1,10,50,50);
+
+            }
+            else{
+                clearInterval(myVar);
+            }
+                        
+        }
+        
+
+
+    </script>
+    <head>
+        <meta charset="utf-8">
+        <title>Let's move</title>
+    </head>
+    <body onload='init()'>
+        
+        <canvas id="myCanvas" width="300" height="200" style="border:1px solid #d1560f;"></canvas>        
+
+    </body>
+</html>

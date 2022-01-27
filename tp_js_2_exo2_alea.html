@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <script>
+        
+        var c;
+        var ctx;        
+        var x1;
+        var x2;
+        var randx = Math.floor(Math.random()*11);
+        var randy = Math.floor(Math.random()*11);
+        var randVit = Math.floor(Math.random()*2);
+
+        function init() {       
+            c = document.getElementById("myCanvas");
+            ctx = c.getContext('2d');
+            c.setAttribute("width",c.width-(c.width%randx));  
+            c.setAttribute("height",c.height-(c.height%randy)); 
+            x1 = 0;  
+            x2 = 50;
+            y1 = 0;
+            y2 = 50;    
+            ctx.fillStyle = "#000000";
+            ctx.fillRect(x1,y1,50,50);
+            const myVar = setInterval(deplace,10);      
+                            
+        }
+        
+        function deplace() {
+            console.log("height= "+c.height);
+            console.log("width ="+c.width);
+            console.log("x2= "+x2);
+            console.log("y2= "+y2);
+            ctx.clearRect(0,0,c.width,c.height);
+            x1 = x1 + randx;
+            x2 = x2 + randx;
+            y1 = y1 + randy;
+            y2 = y2 + randy;
+            ctx.fillRect(x1,y1,50,50);
+
+            if (x2>=c.width) {
+                randx = -randx;
+                ctx.fillStyle = "#ff0000";
+            }
+            if (x1<=0) {
+                randx = -randx;
+                ctx.fillStyle = "#00ff00";
+            }
+            if (y2>=c.height) {
+                randy = -randy;
+                ctx.fillStyle = "#0000ff";
+            }
+            if (y1<=0) {
+                randy = -randy;
+                ctx.fillStyle = "#ffff00";
+            }
+                        
+        }
+        
+
+
+    </script>
+    <head>
+        <meta charset="utf-8">
+        <title>Let's move</title>
+    </head>
+    <body onload='init()'>
+        
+        <canvas id="myCanvas" width="1500" height="700" style="border:1px solid #000000;"></canvas>        
+
+    </body>
+</html>
