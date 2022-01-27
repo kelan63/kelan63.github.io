@@ -8,7 +8,6 @@
         var x2;
         var randx = Math.floor(Math.random()*11);
         var randy = Math.floor(Math.random()*11);
-        var randVit = Math.floor(Math.random()*2);
 
         function init() {       
             c = document.getElementById("myCanvas");
@@ -26,10 +25,6 @@
         }
         
         function deplace() {
-            console.log("height= "+c.height);
-            console.log("width ="+c.width);
-            console.log("x2= "+x2);
-            console.log("y2= "+y2);
             ctx.clearRect(0,0,c.width,c.height);
             x1 = x1 + randx;
             x2 = x2 + randx;

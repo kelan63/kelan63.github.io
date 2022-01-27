@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Let's move</title>
+    
+    <SCRIPT LANGUAGE="Javascript" SRC="rectangle.js"></SCRIPT>
+    <script>
+        
+        var c;
+        var ctx;        
+        var randx = Math.floor(Math.random()*11);
+        var randy = Math.floor(Math.random()*11);
+        var color = "#ff0000";
+
+        function init() {       
+            c = document.getElementById("myCanvas");
+            /*c.setAttribute("width",c.width-(c.width%randx));  
+            c.setAttribute("height",c.height-(c.height%randy));*/ 
+            rect1 = new Rectangle(0,0,c,color);
+            rect1.initialization();
+            //setInterval(rect1.deplace,10); 
+            
+            
+                 
+                            
+        }
+        
+
+        
+        
+
+
+    </script>
+    </head>
+    <body onload='init()'>
+        
+        <canvas id="myCanvas" width="1500" height="700" style="border:1px solid #000000;"></canvas>        
+
+    </body>
+</html>
