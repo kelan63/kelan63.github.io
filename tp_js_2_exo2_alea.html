@@ -9,18 +9,22 @@
         var randx = Math.floor(Math.random()*11);
         var randy = Math.floor(Math.random()*11);
 
-        function init() {       
+        function init() { 
+                  
             c = document.getElementById("myCanvas");
             ctx = c.getContext('2d');
-            c.setAttribute("width",c.width-(c.width%randx));  
-            c.setAttribute("height",c.height-(c.height%randy)); 
+
+
+            
+            
+
             x1 = 0;  
             x2 = 50;
             y1 = 0;
             y2 = 50;    
             ctx.fillStyle = "#000000";
             ctx.fillRect(x1,y1,50,50);
-            const myVar = setInterval(deplace,10);      
+            const myVar = setInterval(deplace,0);      
                             
         }
         
@@ -59,8 +63,8 @@
         <title>Let's move</title>
     </head>
     <body onload='init()'>
-        
-        <canvas id="myCanvas" width="1500" height="700" style="border:1px solid #000000;"></canvas>        
+
+        <canvas id="myCanvas" width="1500" height="700" style="border:1px solid #000000;" color="#00ff00"></canvas>            
 
     </body>
 </html>

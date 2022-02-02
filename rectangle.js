@@ -12,14 +12,12 @@ var Rectangle = function(x1,y1,canvas,color) {
     
     this.initialization = function(){
         this.canvas2dContext.fillStyle= color;
-        console.log("x1 = "+x1);
-        console.log("y1 = "+y1);
         this.canvas2dContext.fillRect(x1,y1,50,50);
-        setInterval(this.deplace,10); 
+        setInterval(this.deplace.bind(this),10); 
     }
     
     this.deplace = function(){
-        this.canvas2dContext.clearRect(0,0,this.canvas.width,this.canvas.height);
+        this.canvas2dContext.clearRect(this.x1-1,this.y1-1,52,52);
         this.x1 = this.x1 + this.randx;
         this.x2 = this.x2 + this.randx;
         this.y1 = this.y1 + this.randy;

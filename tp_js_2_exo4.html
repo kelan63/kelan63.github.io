@@ -4,24 +4,19 @@
         <meta charset="utf-8">
         <title>Let's move</title>
     
-    <SCRIPT LANGUAGE="Javascript" SRC="rectangle.js"></SCRIPT>
+    <SCRIPT LANGUAGE="Javascript" SRC="rectangle2.js"></SCRIPT>
     <script>
         
         var c;
         var ctx;        
-        var randx = Math.floor(Math.random()*11);
-        var randy = Math.floor(Math.random()*11);
-        var color = "#ff0000";
 
         function init() {       
             c = document.getElementById("myCanvas");
-            /*c.setAttribute("width",c.width-(c.width%randx));  
-            c.setAttribute("height",c.height-(c.height%randy));*/ 
-            rect1 = new Rectangle(0,0,c,"#ff0000");
+            rect1 = new Rectangle(0,0,c,0);
             rect1.initialization();
-            rect2 = new Rectangle(100,0,c,"#00ff00");
+            rect2 = new Rectangle(0,120,c,2);
             rect2.initialization();
-            rect3 = new Rectangle(0,0,c,"#0000ff");
+            rect3 = new Rectangle(0,240,c,4);
             rect3.initialization();     
                             
         }
