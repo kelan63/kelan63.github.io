@@ -15,6 +15,7 @@
             if (typeof(Worker) !== "undefined") {
                 for (let i = 0; i < color.length; i++) { 
                     if (typeof(w[i]) == "undefined") {
+                        console.log("couleur i ="+ color[i]);
                         w[i] = new Worker("point_worker2.js");
                         w[i].postMessage(color[i]);
                     }
