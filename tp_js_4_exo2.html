@@ -6,26 +6,29 @@
 
         var c;
         var ctx;    
-        var w;
+        var w = new Array();
+        var color = new Array("#ff0000","#00ff00","#0000ff","000000","123456");
 
         function init() {
             c = document.getElementById("myCanvas");
             ctx = c.getContext("2d");
             if (typeof(Worker) !== "undefined") {
-                if (typeof(w) == "undefined") {
-                    w = new Worker("point_worker.js");
+                for (let i = 0; i < color.length; i++) { 
+                    if (typeof(w[i]) == "undefined") {
+                        w[i] = new Worker("point_worker2.js");
+                        w[i].postMessage(color[i]);
+                    }
+                    w[i].onmessage = function(event) {
+                        dessin(event.data[0],event.data[1],event.data[2]);
+                    };
                 }
-                w.onmessage = function(event) {
-                    console.log("pomme2");
-                    dessin(event.data[0],event.data[1]);
-                };
             }
         }
 
-        function dessin(x,y){
+        function dessin(x,y,color){
                     ctx.beginPath();
                     ctx.arc(x,y,5,0,2*Math.PI,false);
-                    ctx.fillStyle = "black";
+                    ctx.fillStyle = color;
                     ctx.stroke();
         }
 
