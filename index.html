@@ -3,20 +3,27 @@
     <head>
         <script src="js/ads.js"></script>
     </head>
-    <body>
-        <h1>pomme et poire et banane 2.0</h1>
+    
+    <SCRIPT LANGUAGE="Javascript"></SCRIPT>
         <script>
-            if ( window.canRunAds === undefined ){
-            // adblocker detected, show fallback
-                showFallbackImage;
+            function inti(){
+                if ( window.canRunAds === undefined ){
+                    // adblocker detected, show fallback
+                    showFallbackImage;
+                }
+                else{
+                    console.log("No ads detected");
+                }
+
             }
-            else{
-                console.log("No ads detected");
-            }
+            
 
             function showFallbackImage(){
                 console.log("Ads detected");
             }
         </script>
+    <body onload="init()">
+        <h1>pomme et poire et banane 2.0</h1>
+        
     </body>
 </html>
