@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <script src="/js/ads.js"></script>
+        <script type="text/javascript" src="./js/ads.js"></script>
+        <script type="text/javascript" src="./js/truc.js"></script>
     </head>
     
-    <SCRIPT LANGUAGE="Javascript"></SCRIPT>
-        <script>
-            function init(){
-                if ( window.canRunAds === undefined ){
-                    // adblocker detected, show fallback
-                    showFallbackImage;
-                }
-                else{
-                    console.log("No ads detected");
-                }
-
+    <script type="text/javascript">
+        function init(){
+            if ( window.canRunAds === undefined ){
+                // adblocker detected, show fallback
+                showFallbackImage;
             }
+            else{
+                console.log("No ads detected");
+                affichage;
+            }
+
+        }
             
 
-            function showFallbackImage(){
-                console.log("Ads detected");
-            }
-        </script>
+        function showFallbackImage(){
+            console.log("Ads detected");
+        }
+    </script>
     <body onload="init()">
-        <h1>poire</h1>
+        <h1>poire 2.0</h1>
         
     </body>
 </html>
