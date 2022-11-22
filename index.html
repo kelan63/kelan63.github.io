@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="js/ads.js"></script>
+    </head>
+    <body>
+        <h1>pomme</h1>
+        <script>
+            if ( window.canRunAds === undefined ){
+            // adblocker detected, show fallback
+                showFallbackImage();
+            }
+        </script>
+    </body>
+    <script>
+        function showFallbackImage(){
+            console.log("Ads detected");
+        }
+    </script>
+</html>
